@@ -3,16 +3,18 @@
 #include <string>
 
 Vehicle::Vehicle()
-	: name()
-	, petrol()
-	, numWheels()
+	: name("")
+	, numWheels(0)
+	, tankLevel(0)
+	, tankCapacity(0)
 {
 }
 
-Vehicle::Vehicle(std::string newName, float newPetrol, int newWheels)
+Vehicle::Vehicle(std::string newName, int newWheels, float newTankLevel, float newTankCapacity)
 	: name(newName)
-	, petrol(newPetrol)
 	, numWheels(newWheels)
+	, tankLevel(newTankLevel)
+	, tankCapacity(newTankCapacity)
 {
 }
 
@@ -25,29 +27,28 @@ std::string Vehicle::GetName()
 	return name;
 }
 
-float Vehicle::GetPetrol()
-{
-	return petrol;
-}
-
 int Vehicle::GetWheels()
 {
 	return numWheels;
 }
 
-void Vehicle::SetPetrol(float changeAmount)
+float Vehicle::GetTankLevel()
 {
-	std::string userAnswer;
+	return tankLevel;
+}
 
-	std::cout << "Are you filling your vehicle up with this amount? Y/N\n";
-	std::cin >> userAnswer;
+void Vehicle::FillTank()
+{
+	tankLevel = tankCapacity;
+}
 
-	if (userAnswer == "Y")
+void Vehicle::FillTank(float petrolToAdd)
+{
+	tankLevel += petrolToAdd;
+
+	if (tankLevel > tankCapacity)
 	{
-		petrol += changeAmount;
-	}
-	else {
-		petrol -= changeAmount;
+		tankLevel = tankCapacity;
 	}
 }
 
@@ -55,7 +56,7 @@ void Vehicle::Print()
 {
 	std::cout << "\n\nCar Details:\n";
 	std::cout << "Name: " << GetName();
-	std::cout << "\nPetrol level: " << GetPetrol();
+	std::cout << "\nTank level: " << GetTankLevel();
 	std::cout << "\nWheels: " << GetWheels();
 }
 

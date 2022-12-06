@@ -8,7 +8,7 @@ class Motorbike : public Vehicle
 public:
 
 	Motorbike();
-	Motorbike(std::string newName, float newPetrol, int numWheels);
+	Motorbike(std::string newName, int numWheels, float newTankLevel, float newTankCapacity);
 
 	~Motorbike();
 

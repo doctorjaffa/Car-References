@@ -5,8 +5,8 @@ Motorbike::Motorbike()
 {
 }
 
-Motorbike::Motorbike(std::string newName, float newPetrol, int numWheels)
-	: Vehicle(newName, newPetrol, numWheels)
+Motorbike::Motorbike(std::string newName, int numWheels, float newTankLevel, float newTankCapacity)
+	: Vehicle(newName, numWheels, newTankLevel, newTankCapacity)
 {
 	std::cout << "\nMotorbike " << name << "  was constructed using parameters.";
 }

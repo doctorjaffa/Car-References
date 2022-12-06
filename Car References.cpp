@@ -35,18 +35,35 @@ int main()
 	std::cout << "New petrol level: " << carPtr->GetPetrol() << "\n";
 	*/
 
-	Car car1("Ford", 120.0f, 4);
-	Truck truck1("Big", 200.0f, 2, "Rubbish");
-	Motorbike bike1("Fast", 100.0f, 0);
+	//Create vehicle instances.
+	Car car1("Ford", 4, 155.2f, 175.0f);
+	Truck truck1("Big", 2, "Rubbish", 186.4f, 200.0f);
+	Motorbike bike1("Fast", 0, 43.1f, 100.0f);
 
+	//Print car details.
 	car1.Print();
 
+	//Print truck contents.
 	std::cout << "\n\nTruck contents: " << truck1.GetContents() << "\n";
 
+	//Set truck contents.
 	truck1.SetContents("Firewood");
 	
+	//Print truck details.
 	truck1.Print();
 	std::cout << "\n";
+
+	//Print bike details.
+	bike1.Print();
+	std::cout << "\n";
+
+	//Fill bike tank by 20.2f
+	bike1.FillTank(20.2f);
+	std::cout << "\nNew tank level: " << bike1.GetTankLevel();
+
+	//Fill bike completely.
+	bike1.FillTank();
+	std::cout << "\nNew tank level: " << bike1.GetTankLevel();
 
 }
 

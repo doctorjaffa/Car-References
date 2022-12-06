@@ -8,7 +8,7 @@ class Truck : public Vehicle
 public:
 
 	Truck();
-	Truck(std::string newName, float newPetrol, int newWheels, std::string newContents);
+	Truck(std::string newName, int newWheels, std::string newContents, float newTankLevel, float newTankCapacity);
 
 	~Truck();
 

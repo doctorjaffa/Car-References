@@ -5,8 +5,8 @@ Truck::Truck()
 {
 }
 
-Truck::Truck(std::string newName, float newPetrol, int newWheels, std::string newContents)
-	: Vehicle(newName, newPetrol, newWheels)
+Truck::Truck(std::string newName, int newWheels, std::string newContents, float newTankLevel, float newTankCapacity)
+	: Vehicle(newName, newWheels, newTankLevel, newTankCapacity)
 	, bedContents(newContents)
 {
 	std::cout << "\nTruck " << name << " was constructed using parameters.";
@@ -30,5 +30,5 @@ void Truck::SetContents(std::string newContents)
 void Truck::Print()
 {
 	Vehicle::Print();
-	std::cout << "\n" << GetContents();
+	std::cout << "\nContents: " << GetContents();
 }

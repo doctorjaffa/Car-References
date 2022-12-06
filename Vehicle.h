@@ -8,23 +8,26 @@ public:
 
 	//Constructors/Destructors.
 	Vehicle();
-	Vehicle(std::string newName, float newPetrol, int newWheels);
+	Vehicle(std::string newName, int newWheels, float newTankLevel, float newTankCapacity);
 	~Vehicle();
 
 	//Getters.
 	std::string GetName();
-	float GetPetrol();
 	int GetWheels();
 
-	//Setters.
-	void SetPetrol(float changeAmount);
+	float GetTankLevel();
+
+	//Public functions.
+	void FillTank();
+	void FillTank(float petrolToAdd);
 
 	void Print();
 
 protected:
 
 	std::string name;
-	float petrol;
+	float tankLevel;
+	float tankCapacity;
 	int numWheels;
 };
 
