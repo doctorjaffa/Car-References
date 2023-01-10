@@ -9,19 +9,20 @@ public:
 	//Constructors/Destructors.
 	Vehicle();
 	Vehicle(std::string newName, int newWheels, float newTankLevel, float newTankCapacity);
-	~Vehicle();
+	virtual ~Vehicle();
 
 	//Getters.
 	std::string GetName();
 	int GetWheels();
 
 	float GetTankLevel();
+	virtual std::string GetVehicleTypeName() = 0;
 
 	//Public functions.
 	void FillTank();
 	void FillTank(float petrolToAdd);
 
-	void Print();
+	virtual void Print();
 
 protected:
 

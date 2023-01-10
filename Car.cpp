@@ -16,3 +16,8 @@ Car::~Car()
 {
 	std::cout << "\nCar " << name << " was destroyed.";
 }
+
+std::string Car::GetVehicleTypeName()
+{
+	return "Car";
+}

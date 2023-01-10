@@ -11,5 +11,7 @@ public:
 
 	~Car();
 
+	std::string GetVehicleTypeName();
+
 };
 

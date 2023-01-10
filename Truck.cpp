@@ -22,6 +22,11 @@ std::string Truck::GetContents()
 	return bedContents;
 }
 
+std::string Truck::GetVehicleTypeName()
+{
+	return "Truck";
+}
+
 void Truck::SetContents(std::string newContents)
 {
 	bedContents = newContents;

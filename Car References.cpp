@@ -2,6 +2,7 @@
 //
 
 #include <iostream>
+#include "Vehicle.h"
 #include "Car.h"
 #include "Truck.h"
 #include "Motorbike.h"
@@ -65,6 +66,20 @@ int main()
 	bike1.FillTank();
 	std::cout << "\nNew tank level: " << bike1.GetTankLevel();
 
+	//Create new truck instance.
+	Truck truck2("Heavy", 2, "Logs", 155.3f, 240.0f);
+
+	//Create new driver instance.
+	Driver driver1;
+
+	driver1.RegisterVehicle(&truck2);
+
+	truck1.Print();
+	car1.Print();
+	bike1.Print();
+
+	std::cout << "\n";
+	std::cout << "\n";
 }
 
 

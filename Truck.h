@@ -13,6 +13,7 @@ public:
 	~Truck();
 
 	std::string GetContents();
+	std::string GetVehicleTypeName();
 
 	void SetContents(std::string newContents);
 

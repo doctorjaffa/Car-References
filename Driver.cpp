@@ -1,32 +1,64 @@
 #include "Driver.h"
-#include "Car.h"
+#include "Vehicle.h"
 #include <iostream>
 
 Driver::Driver()
 	: name("")
-	, currentCar(nullptr)
+	, currentVehicle(nullptr)
 {
 }
 
-Driver::Driver(std::string name, Car* newCar)
+Driver::Driver(std::string name, Vehicle* newVehicle)
 	: name(name)
-	, currentCar(newCar)
+	, currentVehicle(newVehicle)
 {
 
+}
+
+Driver::~Driver()
+{
 }
 
 void Driver::Print()
 {
 	std::cout << "\nDriver: " << name << "\n";
 
-	if (currentCar)
+	if (currentVehicle)
 	{
-		std::cout << "Current Car: " << currentCar->GetName() << "\n";
+		std::cout << "Current Vehicle: " << currentVehicle->GetName() << "\n";
 	}
 }
-void Driver::SetCar(Car* newCar)
+void Driver::RegisterVehicle(Vehicle* newVehicle)
 {
-	currentCar = newCar;
+	
+	currentVehicle = newVehicle;
+
+	if (currentVehicle != nullptr)
+	{
+		currentVehicle->Print();
+	}
+
+	/*
+	Car* carPtr = dynamic_cast<Car*>(currentVehicle);
+	Motorbike* bikePtr = dynamic_cast<Motorbike*>(currentVehicle);
+	Truck* truckPtr = dynamic_cast<Truck*>(currentVehicle);
+
+	if (carPtr != nullptr)
+	{
+		carPtr->Print();
+	}
+	if (bikePtr != nullptr)
+	{
+		bikePtr->Print();
+	}
+	if (truckPtr != nullptr)
+	{
+		truckPtr->Print();
+	}
+
+	*/
+
+	//currentVehicle->Print();
 }
 
 

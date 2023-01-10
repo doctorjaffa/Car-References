@@ -55,7 +55,8 @@ void Vehicle::FillTank(float petrolToAdd)
 void Vehicle::Print()
 {
 	std::cout << "\n\nCar Details:\n";
-	std::cout << "Name: " << GetName();
+	std::cout << "Vehicle Type: " << GetVehicleTypeName();
+	std::cout << "\nName: " << GetName();
 	std::cout << "\nTank level: " << GetTankLevel();
 	std::cout << "\nWheels: " << GetWheels();
 }
